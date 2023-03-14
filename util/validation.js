@@ -1,11 +1,11 @@
 //Data validation functions
-
 function isValidName(value, minLength = 3) {
   return value && value.trim().length >= minLength;
 }
 
 function isValidUserName(value, minLength = 3) {
-  return value && value.trim().length >= minLength;
+  const isValid = /^\w+[^@]$/.test(value);
+  return value && value.trim().length >= minLength && isValid;
 }
 
 function isValidPassword(value, minLength = 8) {
